@@ -20,25 +20,18 @@ class Logger {
 	}
 
 	private chooseColors(type: State): string {
-		let sentence: string = ''
 		switch (type) {
 			case State.WARN:
-				sentence = `${chalk.bold.yellow(type)}`
-				break
+				return `${chalk.bold.yellow(type)}`
 			case State.INFO:
-				sentence = `${chalk.bold.cyan(type)}`
-				break
+				return `${chalk.bold.cyan(type)}`
 			case State.FATAL:
-				sentence = `${chalk.bold.rgb(170, 0, 0).bold(type)}`
-				break
+				return `${chalk.bold.rgb(170, 0, 0).bold(type)}`
 			case State.ERROR:
-				sentence = `${chalk.bold.rgb(255, 85, 85)(type)}`
-				break
+				return `${chalk.bold.rgb(255, 85, 85)(type)}`
 			case State.SUCCES:
-				sentence = `${chalk.bold.greenBright(type)}`
-				break
+				return `${chalk.bold.greenBright(type)}`
 		}
-		return sentence
 	}
 }
 const logger = new Logger()
